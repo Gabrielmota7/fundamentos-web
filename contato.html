@@ -15,6 +15,9 @@
         <li> <a href="contato.html"> Contato </a></li>
         <li><a href="sobremim.html"> Sobre Mim</a>
         </li>
+        <li>
+            <a href="sugestoes.html"> Sugestões</a>
+        </li>
     </ul>
 
     <h1 class="center">Entre em contato comigo</h1>
@@ -24,15 +27,17 @@
             <form >
                 
                 <label for="Nome">Nome:</label><br>
-                <input type="text" id="Nome">
-                <br>
+                <input type="text" id="Nome" onkeyup="validaNome()">
+                <div id = 'txtNome'></div>
                 <br>
                 <label for="email">E-mail:</label><br>
-                <input type="email" id="email">
-                <br>
+                <input type="email" id="email" onkeyup="validaEmail()">
+                <div id = 'txtEmail'></div>
                 <br>
                 <label for="assunto">Assunto:</label><br>
-                <textarea name="assunto" id="assunto" cols="60" rows="10"></textarea>
+                <textarea name="assunto" id="assunto" cols="60" rows="10" onkeyup="validaAssunto()"></textarea>
+                <div id ='txtAssunto' ></div>
+                <button onclick="enviar()">Enviar</button>
             </form>
             <div class="ml-50">
                 
@@ -43,7 +48,7 @@
                      height="250" 
                     style="border:0;" 
                     allowfullscreen="" 
-                    loading="lazy"></iframe>
+                    loading="lazy" onmousemove="mapaZoom()" onmouseout="mapaNormal()" id = "mapa"></iframe>
             </div>
         </div>
 
@@ -67,6 +72,8 @@
                 Todos os direitos reservados para: Gabriel Mota &copy;
                </p>
             </footer>
+
+            <script src="./Assets/js/script.js"></script>
     
 </body>
 </html>
